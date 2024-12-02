@@ -1,0 +1,13 @@
+.bottom__line {
+    width: var(--hamburger__bar-width);
+    height: var(--hamburger__bar-height);
+    background-color: black;
+    transform-origin: left center;
+    transition: rotate var(--hamburger__animation-timing) ease-in-out
+}
+
+.open {
+    rotate: -45deg;
+    width: var(--hamburder__line-width);
+    translate: 0 calc(var(--hamburger__bar-height)/2);
+}

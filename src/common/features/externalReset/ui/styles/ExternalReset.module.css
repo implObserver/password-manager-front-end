@@ -1,0 +1,7 @@
+.light {
+    position: relative;
+    border-radius: inherit;
+    transition: box-shadow 100ms ease-in-out;
+    box-shadow: 0 0 0 max(10000vh, 100vh) rgba(0, 0, 0, .3);
+    z-index: 20;
+}

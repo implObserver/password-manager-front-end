@@ -1,0 +1,35 @@
+:root {
+    --hamburger__bar-width: 20px;
+    --hamburger__bar-height: 3px;
+    --hamburger__gap: 5px;
+    --hamburger__foreground: #333;
+    --hamburger__background: white;
+    --hamburger__animation-timing: 200ms;
+    --hamburder__height: calc(var(--hamburger__bar-height)*3 + var(--hamburger__gap) *2);
+    --sqrt2: 1.41421356237;
+    --hamburder__line-width: calc(var(--hamburder__height) * var(--sqrt2));
+}
+
+.container {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    border-radius: 7px;
+    width: 40px;
+    height: 35px;
+    background-color: var(--color__main-theme);
+}
+
+.hamburger__menu {
+    display: flex;
+    flex-direction: column;
+    max-width: 100px;
+    gap: var(--hamburger__gap);
+    transition: all 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+.open {
+    width: var(--hamburder__height);
+}

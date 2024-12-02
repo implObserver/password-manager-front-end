@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "jsx": "react-jsx",
+    "target": "ESNext", // или ES2020
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "lib": [
+      "es6",
+      "dom",
+      "es2016"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+    },
+  },
+  "include": [
+    "./**/*"
+  ],
+}

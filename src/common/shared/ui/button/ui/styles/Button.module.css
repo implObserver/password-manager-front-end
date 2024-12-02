@@ -1,0 +1,19 @@
+.button {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    appearance: none;
+    height: inherit;
+    width: inherit;
+    border-radius: inherit;
+}
+
+.button>button {
+    cursor: inherit;
+    width: inherit;
+    height: inherit;
+    background-color: inherit;
+    border-radius: inherit;
+    font-size: inherit;
+}

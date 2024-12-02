@@ -1,0 +1,16 @@
+.center__line {
+    width: var(--hamburger__bar-width);
+    height: var(--hamburger__bar-height);
+    background-color: black;
+    transition:
+        opacity var(--hamburger__animation-timing),
+        width var(--hamburger__animation-timing),
+        translate var(--hamburger__animation-timing),
+        transform var(--hamburger__animation-timing),
+        background-color var(--hamburger__animation-timing);
+}
+
+.open {
+    opacity: 0;
+    width: 0;
+}
