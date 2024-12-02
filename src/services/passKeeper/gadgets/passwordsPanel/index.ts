@@ -1,0 +1,1 @@
+export { PasswordsPanel } from './ui/PasswordsPanel'

@@ -1,2 +1,2 @@
 export { passwordsReducer, passwordsActions } from './slice/slice'
-export { selectPasswords } from './slice/selectors'
+export { selectPaginatedPairs, selectCurrentPage, selectItemsPerPage, selectPairs } from './slice/selectors'

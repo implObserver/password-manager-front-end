@@ -5,23 +5,32 @@ const passwordsSlice = createSlice({
     name: 'passwords',
     initialState,
     reducers: {
-        addPassword: (state: Pair[], action: PayloadAction<Pair>) => {
-            const index = state.findIndex(pair => pair.service === action.payload.service);
+        addPassword: (state: PaginationPairs, action: PayloadAction<Pair>) => {
+            const pairs = state.pairs;
+            const index = pairs.findIndex(pair => pair.service === action.payload.service);
             if (index !== -1) {
-                state.push(action.payload);
+                pairs.push(action.payload);
             }
         },
-        removePassword: (state: Pair[], action: PayloadAction<Pair>) => {
-            const index = state.findIndex(pair => pair.service === action.payload.service);
+        removePassword: (state: PaginationPairs, action: PayloadAction<Pair>) => {
+            const pairs = state.pairs;
+            const index = pairs.findIndex(pair => pair.service === action.payload.service);
             if (index !== -1) {
-                state.splice(index, 1);
+                pairs.splice(index, 1);
             }
         },
-        updatePassword: (state: Pair[], action: PayloadAction<Pair>) => {
-            const index = state.findIndex(pair => pair.service === action.payload.service);
+        updatePassword: (state: PaginationPairs, action: PayloadAction<Pair>) => {
+            const pairs = state.pairs;
+            const index = pairs.findIndex(pair => pair.service === action.payload.service);
             if (index !== -1) {
-                state.splice(index, 1, action.payload);
+                pairs.splice(index, 1, action.payload);
             }
+        },
+        goToNextPage: (state: PaginationPairs) => {
+            state.currentPage += 1;
+        },
+        goToPreviousPage: (state: PaginationPairs) => {
+            state.currentPage -= 1;
         }
     },
     extraReducers: (builder) => { },

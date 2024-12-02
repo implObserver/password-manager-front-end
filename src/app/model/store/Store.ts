@@ -1,5 +1,5 @@
 
-import { passwordsReducer } from '@/services/passKeeper/entities/password/model';
+import { passwordsReducer } from '@/services/passKeeper/entities/password';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import {
   persistStore,
