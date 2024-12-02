@@ -1,0 +1,1 @@
+export const selectPasswords = (state: { passwords: Pair[] }) => state.passwords;

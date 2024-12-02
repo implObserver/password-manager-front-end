@@ -1,4 +1,5 @@
 
+import { passwordsReducer } from '@/services/passKeeper/entities/password/model';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import {
   persistStore,
@@ -13,7 +14,7 @@ import {
 import storage from 'redux-persist/lib/storage';
 
 const rootReducer = combineReducers({
-
+  passwords: passwordsReducer,
 })
 
 const persistConfig = {
