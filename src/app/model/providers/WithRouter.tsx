@@ -1,9 +1,12 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import routes from "../routes/Routes";
+import { routes } from "../routes/Routes";
 
-export const WithRouter = () => {
-    const router = createBrowserRouter(routes);
+const router = createBrowserRouter(routes);
+
+export const WithRouter: React.FC = () => {
     return (
-        <RouterProvider router={router} />
-    )
+        <>
+            <RouterProvider router={router} />
+        </>
+    );
 }

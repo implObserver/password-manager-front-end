@@ -1,26 +1,24 @@
 import { useAppDispatch, useCustomState } from "@/common/shared/lib"
-import { passwordsActions } from "@/services/passKeeper/entities/password";
-import { PasswordForm, PasswordFormContext } from "@/services/passKeeper/entities/passwordForm"
+import { addPair } from "@/services/passKeeper/entities/pair/model/slice/thunks/post/addPair";
+import { useAddPairContext } from "../lib/context/Context";
+import { SaveButton } from "@/services/passKeeper/entities/saveButton/ui/SaveButton";
 
 export const AddPassword = () => {
     const dispatch = useAppDispatch();
 
-    const initialPair: Pair = {
-        service: '',
-        password: '',
-    }
+    const pair = useAddPairContext();
 
-    const pair = useCustomState(initialPair);
-
-    const submitHandler = () => {
-        dispatch(passwordsActions.addPassword(pair.getState()))
+    const submitHandler = async (e: React.MouseEvent<HTMLDivElement>) => {
+        await dispatch(addPair(pair.getState()))
+        pair.setState({
+            service: '',
+            password: '',
+        })
     }
 
     return (
-        <div onSubmit={submitHandler}>
-            <PasswordFormContext.Provider value={pair}>
-                <PasswordForm></PasswordForm>
-            </PasswordFormContext.Provider>
+        <div onClick={submitHandler}>
+            <SaveButton></SaveButton>
         </div>
     )
 }

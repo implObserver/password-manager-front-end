@@ -1,0 +1,15 @@
+.password_form {
+    display: flex;
+    width: 95%;
+    justify-content: space-between;
+    justify-self: center;
+    align-items: center;
+}
+
+.form_group {
+    display: flex;
+}
+
+.button {
+    margin-left: auto;
+}

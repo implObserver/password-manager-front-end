@@ -1,0 +1,1 @@
+export { PaginationShowcaseOfPairs } from './ui/PaginationShowcaseOfPairs'

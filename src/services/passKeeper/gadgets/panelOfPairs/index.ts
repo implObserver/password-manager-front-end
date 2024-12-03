@@ -1,0 +1,1 @@
+export { PanelOfPairs } from './ui/PanelOfPairs'

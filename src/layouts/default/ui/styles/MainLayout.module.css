@@ -1,23 +1,11 @@
 .main_layout {
-    display: grid;
-    min-height: 100%;
-  }
-  
-  header {
-    display: grid;
-  }
-  
-  .outlet {
-    min-height: 100%;
-  }
-  
-  footer {
+  display: grid;
+  min-height: 100%;
+}
 
-  }
-
-  .plug {
-    display: grid;
-    grid-template-rows: min-content 1fr min-content;
-    min-height: 100%;
-    padding: calc(var(--responsive-size) * 0.5);
-  }
+.plug {
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  min-height: 100%;
+  padding: calc(var(--responsive-size) * 0.5);
+}

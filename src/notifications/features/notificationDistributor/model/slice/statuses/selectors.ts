@@ -1,0 +1,1 @@
+export const selectStatuses = (state: { statuses: Statuses }) => state.statuses;

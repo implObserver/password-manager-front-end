@@ -1,0 +1,21 @@
+.modal {
+    display: grid;
+    background-color: white;
+    border: 1px var(--color__grey-theme_accent) solid;
+    border-radius: var(--responsive-size);
+    padding: var(--responsive-size);
+}
+
+.input {
+    display: flex;
+    width: 80%;
+    padding: var(--responsive-size);
+    outline: none;
+    font-size: calc(var(--responsive-size)*1.5);
+    margin-left: 0;
+}
+
+.checkbox {
+    display: flex;
+    width: min-content;
+}

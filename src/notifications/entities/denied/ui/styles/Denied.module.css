@@ -1,0 +1,7 @@
+.denied {
+    width: 30vw;
+    padding: 6px;
+    border-radius: 5px;
+    margin-top: 10px;
+    background-color: rgba(255, 208, 0, 0.473);
+}

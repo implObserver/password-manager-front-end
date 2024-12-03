@@ -1,0 +1,1 @@
+export { GeneratePassword } from './ui/GeneratePassword'

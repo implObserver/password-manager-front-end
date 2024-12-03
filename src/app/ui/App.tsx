@@ -4,10 +4,12 @@ import styles from './styles/App.module.css';
 
 export const App = () => {
   return (
-    <div className={styles.app}>
-      <ErrorBoundary>
-        <WithRouter />
-      </ErrorBoundary>
-    </div>
+    <>
+      <div className={styles.app}>
+        <ErrorBoundary>
+          <WithRouter />
+        </ErrorBoundary>
+      </div>
+    </>
   );
 };

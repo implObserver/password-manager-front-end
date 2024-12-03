@@ -1,4 +1,3 @@
-import { Logo } from '@/common/entities/logo'
 import styles from './styles/Header.module.css'
 import { SecondSectionOfHeader } from '@/structures/widgets/secondSectionOfHeader'
 import { FirstSectionOfHeader } from '@/structures/widgets/firstSectionOfHeader'

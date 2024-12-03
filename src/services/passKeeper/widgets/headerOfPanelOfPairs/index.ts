@@ -1,0 +1,1 @@
+export { HeaderOfPanelOfPairs } from './ui/HeaderOfPanelOfPairs'
