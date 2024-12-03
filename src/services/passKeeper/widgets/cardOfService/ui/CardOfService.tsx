@@ -26,13 +26,11 @@ export const Card = () => {
         isLocked: true,
     });
 
-    console.log(pair.getState())
     const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
     }
     const clickHandler = () => {
         const data = pair.getState();
-        console.log('adaddda')
         pair.setState({
             id: data.id,
             service: data.service,

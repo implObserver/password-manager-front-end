@@ -5,7 +5,6 @@ export const generatePassword = (settings: Settings) => {
     const specialChars = '!@#$%^&*()_+-=[]{}|;:,.<>?';
 
     let characterSet = '';
-    console.log('adadada')
     if (settings.customChars) {
         characterSet += settings.customChars;
     } else {
@@ -14,7 +13,6 @@ export const generatePassword = (settings: Settings) => {
         if (settings.useNumbers) characterSet += numbers;
         if (settings.useSpecialChars) characterSet += specialChars;
     }
-    console.log(characterSet)
     if (characterSet.length === 0) {
         alert('Необходимо выбрать хотя бы один тип символов для генерации пароля.');
         throw new Error('Необходимо выбрать хотя бы один тип символов для генерации пароля.');

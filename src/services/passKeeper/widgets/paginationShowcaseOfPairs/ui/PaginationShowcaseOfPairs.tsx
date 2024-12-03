@@ -18,7 +18,7 @@ export const PaginationShowcaseOfPairs = () => {
     const currentPage = useSelector(selectCurrentPage);
     const itemsPerPage = useSelector(selectItemsPerPage);
     const totalPages = Math.max(1, Math.ceil(pairs.length / itemsPerPage));
-    console.log(pairs)
+
     const loadNextPage = () => {
         if (currentPage < totalPages) {
             dispatch(pairsActions.goToNextPage());

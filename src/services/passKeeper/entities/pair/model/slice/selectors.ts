@@ -8,7 +8,6 @@ export const selectPaginatedPairs = createSelector(
     [selectPairs, selectCurrentPage, selectItemsPerPage],
     (pairs: Pair[], currentPage: number, itemsPerPage: number): Pair[] => {
         const startIndex = (currentPage - 1) * itemsPerPage;
-        console.log(currentPage)
         return pairs.slice(startIndex, startIndex + itemsPerPage);
     }
 );

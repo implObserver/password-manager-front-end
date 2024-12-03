@@ -4,6 +4,7 @@
     padding: 15px;
     color: black;
     gap: var(--responsive-size);
+    font-size: calc(var(--responsive-size)*2);
 }
 
 .link {

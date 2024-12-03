@@ -6,7 +6,6 @@ export const addPair = createAsyncThunk(
     async (pair: Pair, thunkAPI) => {
         try {
             const response = await PostService.addPair(pair);
-            console.log(response)
             const result: EmulateResponse = {
                 id: 'addPair',
                 message: `Сервис ${pair.service} успешно добавлен`,
