@@ -1,0 +1,1 @@
+export { GoogleColorizedText } from './ui/GoogleColorizedText'

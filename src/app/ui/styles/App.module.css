@@ -13,8 +13,10 @@
   --color__main-theme_accent: #c9e2eb;
   --color__grey-theme: #f7f8fa;
   --color__grey-theme_accent: #dedfe0;
+  --color__grey-theme_accent_2: #b1b1b1;
   --color_black-theme: #292933;
   --font_family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Roboto;
   color-scheme: light dark;
   --responsive-size: 1vw;
 }

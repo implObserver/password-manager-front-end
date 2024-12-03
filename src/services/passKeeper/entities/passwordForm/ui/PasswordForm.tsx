@@ -13,9 +13,8 @@ export const PasswordForm = () => {
     }
 
     return (
-        <form>
+        <form className={styles.password_form}>
             <div className={styles.form_group}>
-                <label htmlFor="service">Email or Username:</label>
                 <input
                     onChange={changeHandler}
                     className={styles.input}
@@ -28,7 +27,6 @@ export const PasswordForm = () => {
                     required>
                 </input>
 
-                <label htmlFor="password">Password:</label>
                 <input
                     onChange={changeHandler}
                     className={styles.input}

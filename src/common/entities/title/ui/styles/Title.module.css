@@ -1,0 +1,5 @@
+.title {
+    display: flex;
+    width: 80vw;
+    font-size: calc(var(--responsive-size)*3);
+}

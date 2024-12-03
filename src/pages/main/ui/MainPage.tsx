@@ -1,5 +1,5 @@
 import { PasswordsPanel } from '@/services/passKeeper/gadgets/passwordsPanel'
-import styles from '../styles/MainPage.module.css'
+import styles from './styles/MainPage.module.css'
 
 export const MainPage = () => {
     return (

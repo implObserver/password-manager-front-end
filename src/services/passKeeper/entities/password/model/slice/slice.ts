@@ -8,7 +8,8 @@ const passwordsSlice = createSlice({
         addPassword: (state: PaginationPairs, action: PayloadAction<Pair>) => {
             const pairs = state.pairs;
             const index = pairs.findIndex(pair => pair.service === action.payload.service);
-            if (index !== -1) {
+
+            if (index == -1) {
                 pairs.push(action.payload);
             }
         },

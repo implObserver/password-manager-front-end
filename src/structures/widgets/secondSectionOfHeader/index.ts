@@ -1,0 +1,1 @@
+export { SecondSectionOfHeader } from './ui/SecondSectionOfHeader'

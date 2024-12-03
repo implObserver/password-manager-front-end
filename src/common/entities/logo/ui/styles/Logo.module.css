@@ -1,0 +1,9 @@
+.logo {
+    display: flex;
+    font-size: calc(var(--responsive-size)*2.5);
+    gap: calc(var(--responsive-size)*0.5)
+}
+
+.second_word {
+    color: #656668;
+}

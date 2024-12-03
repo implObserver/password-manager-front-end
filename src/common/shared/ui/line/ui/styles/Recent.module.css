@@ -1,0 +1,25 @@
+.recent {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    justify-self: left;
+    width: 100%;
+}
+
+.gap {
+    display: grid;
+    gap: var(--responsive-size);
+}
+
+.recent_name {
+    display: flex;
+    color: var(--color__grey-theme_accent_2);
+    font-size: calc(var(--responsive-size)*2);
+    width: max-content;
+}
+
+.recent_line {
+    display: flex;
+    align-self: center;
+    border-top: 1px var(--color__grey-theme_accent) solid;
+    width: 100%;
+}

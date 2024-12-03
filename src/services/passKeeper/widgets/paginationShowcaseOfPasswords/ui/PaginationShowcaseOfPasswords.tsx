@@ -1,6 +1,8 @@
 import { useSelector } from "react-redux";
 import styles from './styles/PaginationShowcaseOfPasswords.module.css'
 import {
+    Password,
+    PasswordContext,
     passwordsActions,
     selectCurrentPage,
     selectItemsPerPage,
@@ -8,6 +10,7 @@ import {
     selectPairs
 } from "@/services/passKeeper/entities/password";
 import { useAppDispatch } from "@/common/shared/lib";
+import { AddPassword } from "@/services/passKeeper/features/addPassword";
 
 export const PaginationShowcaseOfPasswords = () => {
     const dispatch = useAppDispatch();
@@ -15,21 +18,27 @@ export const PaginationShowcaseOfPasswords = () => {
     const paginatedPairs = useSelector(selectPaginatedPairs);
     const currentPage = useSelector(selectCurrentPage);
     const itemsPerPage = useSelector(selectItemsPerPage);
-    const totalPages = Math.ceil(pairs.length / itemsPerPage);
-    console.log(currentPage)
+    const totalPages = Math.max(1, Math.ceil(pairs.length / itemsPerPage));
+    console.log(pairs)
     const loadNextPage = () => {
-        dispatch(passwordsActions.goToNextPage());
+        if (currentPage < totalPages) {
+            dispatch(passwordsActions.goToNextPage());
+        }
     };
 
     const loadPreviousPage = () => {
-        dispatch(passwordsActions.goToPreviousPage());
+        if (currentPage > 1) {
+            dispatch(passwordsActions.goToPreviousPage());
+        }
     };
 
     const fill = () => {
         return paginatedPairs.map((pair, index) => {
             return (
                 <div className={styles.wrapper} key={index}>
-                    {pair.service}
+                    <PasswordContext.Provider value={pair}>
+                        <Password></Password>
+                    </PasswordContext.Provider>
                 </div>
             )
         });
@@ -39,6 +48,7 @@ export const PaginationShowcaseOfPasswords = () => {
         <div className={styles.container}>
             <div className={styles.container}>
                 {fill()}
+                <AddPassword></AddPassword>
             </div>
             <div className={styles.pagination}>
                 <button className={currentPage === 1
