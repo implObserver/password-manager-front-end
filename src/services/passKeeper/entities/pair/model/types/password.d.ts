@@ -2,7 +2,7 @@ interface Pair {
     id: number;
     service: string,
     password: string,
-    isLocked?: boolean,
+    isLocked: boolean,
 }
 
 interface PaginationPairs {

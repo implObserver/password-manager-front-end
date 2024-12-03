@@ -7,6 +7,7 @@ export const Service = () => {
     return (
         <div>
             <ServiceInputContext.Provider value={pair}>
+                <span>Имя сервиса:</span>
                 <BigServiceInput lock={pair.getState().isLocked}></BigServiceInput>
             </ServiceInputContext.Provider>
         </div>

@@ -14,7 +14,14 @@ export const EditPair = () => {
         if (data.service.length > 0) {
             if (data.password.length > 0) {
                 isLoading.setState(true);
-                await dispatch(editPair(pair.getState()));
+                const newPair: Pair = {
+                    id: data.id,
+                    service: data.service,
+                    password: data.password,
+                    isLocked: true,
+                }
+                await dispatch(editPair(newPair));
+                pair.setState(newPair);
                 isLoading.setState(false);
             }
         }

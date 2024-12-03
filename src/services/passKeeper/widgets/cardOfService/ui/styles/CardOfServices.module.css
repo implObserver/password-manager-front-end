@@ -21,7 +21,7 @@
 .service_section,
 .password_section {
     display: grid;
-    align-items: center;
+    align-items: end;
     grid-template-areas: 'only';
 }
 
@@ -33,8 +33,10 @@
 .service_copy,
 .password_copy {
     display: grid;
+    width: min-content;
     grid-area: only;
-    justify-content: right;
-    padding-right: calc(var(--responsive-size)*5);
-    align-content: center;
+    margin-left: auto;
+    align-items: center;
+    padding: var(--responsive-size);
+    padding-top: calc(var(--responsive-size)*0.2);
 }

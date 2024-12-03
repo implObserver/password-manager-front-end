@@ -7,28 +7,27 @@ import { ServiceContext } from "../components/service/lib/context/Context";
 import { PasswordContext } from "../components/password/lib/context/Context";
 import { EditPair, EditPairContext } from "@/services/passKeeper/features/editPair";
 import { DeletePair, DeletePairContext } from "@/services/passKeeper/features/deletePair";
-import { AddPair, AddPairContext } from "@/services/passKeeper/features/addPair";
-import { Button } from "@/common/shared/ui/button";
 import { EditButton } from "@/services/passKeeper/entities/editButton";
 import { CopyText } from "@/common/features/copyText";
+import { useSelector } from "react-redux";
+import { selectPairs } from "@/services/passKeeper/entities/pair";
+import { useEffect } from "react";
 
 export const Card = () => {
     const location = useLocation();
     const context = location.state as Pair;
+    const pairs = useSelector(selectPairs);
+    const index = pairs.findIndex(pair => pair.id === context.id);
 
-    const pair = useCustomState({
-        id: context.id,
-        service: context.service,
-        password: context.password,
-        isLocked: true,
-    })
+    const pair = useCustomState(pairs[index]);
 
+    console.log(pair.getState())
     const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
     }
     const clickHandler = () => {
         const data = pair.getState();
-        console.log(data)
+        console.log('adaddda')
         pair.setState({
             id: data.id,
             service: data.service,

@@ -15,6 +15,7 @@ export const PostService = {
                 id,
                 service: pair.service,
                 password: pair.password,
+                isLocked: false,
             }
             return {
                 status: 200,

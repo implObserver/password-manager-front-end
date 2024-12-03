@@ -8,6 +8,7 @@ export const Password = () => {
     return (
         <div>
             <PasswordInputContext.Provider value={pair}>
+                <span>Пароль:</span>
                 <BigPasswordInput lock={pair.getState().isLocked}></BigPasswordInput>
             </PasswordInputContext.Provider>
         </div>

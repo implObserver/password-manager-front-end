@@ -11,6 +11,7 @@ export const DispatcherOfPair = () => {
         id: -1,
         service: '',
         password: '',
+        isLocked: false,
     })
 
     const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {

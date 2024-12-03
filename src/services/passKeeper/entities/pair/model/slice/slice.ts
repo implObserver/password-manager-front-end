@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, current, PayloadAction } from "@reduxjs/toolkit";
 import { initialState } from "./defaultState";
 import { addPair } from "./thunks/post/addPair";
 import { editPair } from "./thunks/put/editPair";
@@ -52,7 +52,6 @@ const pairsSlice = createSlice({
             } else {
                 const pairs = state.pairs;
                 const newPair = action.payload.data.message as Pair;
-                console.log(newPair)
                 const index = pairs.findIndex(pair => pair.id === newPair.id);
                 const index2 = pairs.findIndex(pair => pair.service === newPair.service);
                 if (index === -1 && index2 === -1) {
@@ -74,7 +73,14 @@ const pairsSlice = createSlice({
                 const index = pairs.findIndex(pair => pair.id === newPair.id);
 
                 if (index !== -1) {
-                    pairs.splice(index, 1, newPair);
+                    const oldPair = pairs[index];
+                    if (oldPair.service === newPair.service && oldPair.password === newPair.password) {
+                        action.payload.data.message = 'Нет данных для обновления'
+                        action.payload.data.status = 403;
+                        action.payload.isError = true;
+                    } else {
+                        pairs.splice(index, 1, newPair);
+                    }
                 } else {
                     action.payload.data.message = 'Несуществующий сервис'
                     action.payload.data.status = 403;
@@ -90,8 +96,6 @@ const pairsSlice = createSlice({
                 const pairs = state.pairs;
                 const newPair = action.payload.data.message as Pair;
                 const index = pairs.findIndex(pair => pair.id === newPair.id);
-                console.log(action.payload.data.message)
-                console.log(index)
                 if (index !== -1) {
                     pairs.splice(index, 1);
                 } else {
