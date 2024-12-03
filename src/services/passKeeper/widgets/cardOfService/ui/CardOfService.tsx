@@ -18,8 +18,13 @@ export const Card = () => {
     const context = location.state as Pair;
     const pairs = useSelector(selectPairs);
     const index = pairs.findIndex(pair => pair.id === context.id);
-
-    const pair = useCustomState(pairs[index]);
+    const openedPair = pairs[index];
+    const pair = useCustomState({
+        id: openedPair.id,
+        service: openedPair.service,
+        password: openedPair.password,
+        isLocked: true,
+    });
 
     console.log(pair.getState())
     const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {

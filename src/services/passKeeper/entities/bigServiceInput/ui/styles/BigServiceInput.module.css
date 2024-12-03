@@ -6,5 +6,5 @@
     border-radius: var(--responsive-size);
 }
 .lock {
-    background-color: var(--color__grey-theme_accent);
+    background-color: var(--color__grey-theme);
 }
