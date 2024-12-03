@@ -1,0 +1,5 @@
+.input {
+    padding: var(--responsive-size) var(--responsive-size) var(--responsive-size) calc(var(--responsive-size)*0.5);
+    outline: none;
+    font-size: calc(var(--responsive-size)*2);
+}

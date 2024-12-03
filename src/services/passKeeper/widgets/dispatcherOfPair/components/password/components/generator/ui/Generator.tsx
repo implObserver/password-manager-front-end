@@ -4,9 +4,11 @@ import { Dropdown, DropdownContext } from "@/common/shared/ui/dropdownElement"
 import { GeneratorForm, GeneratorFormContext } from "@/services/passKeeper/entities/generatorForm";
 import { GeneratePassword } from "@/services/passKeeper/features/generatePassword";
 import styles from './styles/Generator.module.css'
+import { useEffect, useRef } from "react";
 
 export const Generator = () => {
     const focus = useCustomState(false);
+
     const settings = useCustomState({
         length: 8,
         useUppercase: true,

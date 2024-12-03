@@ -4,7 +4,7 @@ import styles from './styles/OperationWithPairsNotification.module.css'
 export const OperationWithPairsNotification = () => {
     return (
         <div className={styles.container}>
-            <NotificationDistributor id={'addPair'}></NotificationDistributor>
+            <NotificationDistributor ids={['addPair', 'deletePair', 'editPair']}></NotificationDistributor>
         </div>
     )
 }

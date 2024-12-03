@@ -1,0 +1,22 @@
+.button {
+    background-color: transparent;
+    border: calc(var(--responsive-size)*0.2) solid #007bff;
+    color: #007bff;
+    font-size: calc(var(--responsive-size)*1.6);
+    padding: calc(var(--responsive-size)*0.5) calc(var(--responsive-size));
+    border-radius: calc(var(--responsive-size)*0.5);
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.button:active {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    transform: scale(0.95);
+    transition: background-color 0.1s ease;
+}

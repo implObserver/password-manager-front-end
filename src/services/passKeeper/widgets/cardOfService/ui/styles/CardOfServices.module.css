@@ -1,0 +1,40 @@
+.card {
+    display: grid;
+    gap: 1vw;
+}
+
+.form_group {
+    display: grid;
+    gap: 1vw;
+}
+
+.buttons {
+    display: flex;
+    gap: var(--responsive-size);
+    justify-content: right;
+}
+
+.hidden_button {
+    display: none;
+}
+
+.service_section,
+.password_section {
+    display: grid;
+    align-items: center;
+    grid-template-areas: 'only';
+}
+
+.service_input,
+.password_input {
+    grid-area: only;
+}
+
+.service_copy,
+.password_copy {
+    display: grid;
+    grid-area: only;
+    justify-content: right;
+    padding-right: calc(var(--responsive-size)*5);
+    align-content: center;
+}

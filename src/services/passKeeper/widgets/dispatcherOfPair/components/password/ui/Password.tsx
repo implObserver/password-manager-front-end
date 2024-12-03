@@ -1,13 +1,10 @@
-import { PasswordInput } from "@/services/passKeeper/entities/passwordInput/ui/PasswordInput"
+import { SmallPasswordInput } from "@/services/passKeeper/entities/smallPasswordInput/ui/SmallPasswordInput"
 import { usePasswordContext } from "../lib/context/Context"
-import { PasswordInputContext } from "@/services/passKeeper/entities/passwordInput/lib/context/Context";
 import styles from './styles/Password.module.css'
 import { useCustomState } from "@/common/shared/lib";
-import { Link } from "react-router-dom";
 import { ExternalReset, ExternalResetContext } from "@/common/features/externalReset";
-import { Dropdown, DropdownContext } from "@/common/shared/ui/dropdownElement";
-import { GeneratePassword } from "@/services/passKeeper/features/generatePassword/ui/GeneratePassword";
 import { Generator } from "../components/generator";
+import { PasswordInputContext } from "@/services/passKeeper/shared/ui/passwordInput";
 
 export const Password = () => {
     const pair = usePasswordContext();
@@ -28,7 +25,7 @@ export const Password = () => {
                 <ExternalReset>
                     <PasswordInputContext.Provider value={pair}>
                         <div onFocus={focusHandler} className={styles.password}>
-                            <PasswordInput></PasswordInput>
+                            <SmallPasswordInput></SmallPasswordInput>
                         </div>
                         <div>
                             <div className={

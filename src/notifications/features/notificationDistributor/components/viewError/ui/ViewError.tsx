@@ -10,6 +10,7 @@ export const ViewError = ({ error }) => {
     const dispatch = useAppDispatch();
     const status = error.status;
     const message = error.message;
+    console.log(error)
 
     useEffect(() => {
         const handleUnload = () => {

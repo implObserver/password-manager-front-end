@@ -1,3 +1,5 @@
 export { pairsReducer, pairsActions } from './slice/slice'
 export { addPair } from './slice/thunks/post/addPair'
+export { deletePair } from './slice/thunks/delete/deletePair'
+export { editPair } from './slice/thunks/put/editPair'
 export { selectPaginatedPairs, selectCurrentPage, selectItemsPerPage, selectPairs } from './slice/selectors'

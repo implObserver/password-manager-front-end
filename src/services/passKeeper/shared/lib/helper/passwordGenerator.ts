@@ -16,6 +16,7 @@ export const generatePassword = (settings: Settings) => {
     }
     console.log(characterSet)
     if (characterSet.length === 0) {
+        alert('Необходимо выбрать хотя бы один тип символов для генерации пароля.');
         throw new Error('Необходимо выбрать хотя бы один тип символов для генерации пароля.');
     }
 

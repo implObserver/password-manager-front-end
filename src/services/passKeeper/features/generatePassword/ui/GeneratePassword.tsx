@@ -1,7 +1,7 @@
 import { GenerateButton } from '@/services/passKeeper/entities/generateButton';
 import { generatePassword } from '@/services/passKeeper/shared/lib';
 import { useGeneratorFormContext } from '@/services/passKeeper/entities/generatorForm';
-import { usePasswordInputContext } from '@/services/passKeeper/entities/passwordInput';
+import { usePasswordInputContext } from '@/services/passKeeper/shared/ui/passwordInput';
 
 export const GeneratePassword = () => {
     const pair = usePasswordInputContext();

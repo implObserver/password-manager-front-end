@@ -4,6 +4,7 @@
     justify-content: space-between;
     justify-self: center;
     align-items: center;
+    border-top: 1px var(--color__grey-theme_accent) solid;
 }
 
 .form_group {

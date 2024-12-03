@@ -1,3 +1,5 @@
 .counter {
-    font-size: calc(var(--responsive-size)*2);
+    display: flex;
+    padding: calc(var(--responsive-size)*2);
+    font-size: calc(var(--responsive-size)*3);
 }

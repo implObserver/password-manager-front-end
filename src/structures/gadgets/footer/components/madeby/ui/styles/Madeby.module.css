@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    color: black;
+    gap: var(--responsive-size);
+}
+
+.link {
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
+}

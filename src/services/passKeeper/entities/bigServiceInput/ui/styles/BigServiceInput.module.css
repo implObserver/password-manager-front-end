@@ -1,0 +1,7 @@
+.input {
+    padding: var(--responsive-size);
+    outline: none;
+    font-size: calc(var(--responsive-size)*2);
+    border: 1px var(--color__grey-theme_accent) solid;
+    border-radius: var(--responsive-size);
+}

@@ -1,6 +1,8 @@
 interface Pair {
+    id: number;
     service: string,
     password: string,
+    isLocked?: boolean,
 }
 
 interface PaginationPairs {

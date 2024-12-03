@@ -1,6 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { initialState } from "./defaultState";
 import { addPair } from "./thunks/post/addPair";
+import { editPair } from "./thunks/put/editPair";
+import { deletePair } from "./thunks/delete/deletePair";
 
 const pairsSlice = createSlice({
     name: 'pairs',
@@ -46,23 +48,63 @@ const pairsSlice = createSlice({
 
         const addNewPair = (state: PaginationPairs, action: PayloadAction<EmulateResponse>) => {
             if (action.payload.isError) {
-                const pairs = state.pairs;
-                console.log('ошибка')
+                action.payload.data.message = 'Ошибка добавления сервиса'
             } else {
                 const pairs = state.pairs;
                 const newPair = action.payload.data.message as Pair;
-                const index = pairs.findIndex(pair => pair.service === newPair.service);
-
-                if (index == -1) {
+                console.log(newPair)
+                const index = pairs.findIndex(pair => pair.id === newPair.id);
+                const index2 = pairs.findIndex(pair => pair.service === newPair.service);
+                if (index === -1 && index2 === -1) {
                     pairs.push(newPair);
                 } else {
-                    console.log('уже существует')
+                    action.payload.data.message = 'Сервис уже существует'
+                    action.payload.data.status = 403;
+                    action.payload.isError = true;
                 }
             }
         };
 
+        const updatePair = (state: PaginationPairs, action: PayloadAction<EmulateResponse>) => {
+            if (action.payload.isError) {
+                action.payload.data.message = 'Ошибка обновления сервиса'
+            } else {
+                const pairs = state.pairs;
+                const newPair = action.payload.data.message as Pair;
+                const index = pairs.findIndex(pair => pair.id === newPair.id);
+
+                if (index !== -1) {
+                    pairs.splice(index, 1, newPair);
+                } else {
+                    action.payload.data.message = 'Несуществующий сервис'
+                    action.payload.data.status = 403;
+                    action.payload.isError = true;
+                }
+            }
+        };
+
+        const removePair = (state: PaginationPairs, action: PayloadAction<EmulateResponse>) => {
+            if (action.payload.isError) {
+                action.payload.data.message = 'Ошибка удаления сервиса'
+            } else {
+                const pairs = state.pairs;
+                const newPair = action.payload.data.message as Pair;
+                const index = pairs.findIndex(pair => pair.id === newPair.id);
+                console.log(action.payload.data.message)
+                console.log(index)
+                if (index !== -1) {
+                    pairs.splice(index, 1);
+                } else {
+                    action.payload.data.message = 'Несуществующий сервис'
+                    action.payload.data.status = 403;
+                    action.payload.isError = true;
+                }
+            }
+        }
         const asyncActions = [
             { action: addPair, handler: addNewPair },
+            { action: editPair, handler: updatePair },
+            { action: deletePair, handler: removePair },
         ];
 
         asyncActions.forEach(({ action, handler }) => {

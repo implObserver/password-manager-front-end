@@ -4,12 +4,11 @@ import { Service } from '../components/service'
 import styles from './styles/DispatcherOfPair.module.css'
 import { PasswordContext } from '../components/password/lib/context/Context'
 import { ServiceContext } from '../components/service/lib/context/Context'
-import { Button } from '@/common/shared/ui/button'
-import { AddPairContext } from '@/services/passKeeper/features/addPassword/lib/context/Context'
-import { AddPassword } from '@/services/passKeeper/features/addPassword'
+import { AddPair, AddPairContext } from '@/services/passKeeper/features/addPair'
 
 export const DispatcherOfPair = () => {
     const pair = useCustomState({
+        id: -1,
         service: '',
         password: '',
     })
@@ -30,7 +29,7 @@ export const DispatcherOfPair = () => {
             </div>
             <div className={styles.button}>
                 <AddPairContext.Provider value={pair}>
-                    <AddPassword></AddPassword>
+                    <AddPair></AddPair>
                 </AddPairContext.Provider>
             </div>
         </form>

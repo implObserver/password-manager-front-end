@@ -1,0 +1,1 @@
+export { SmallPasswordInput as PasswordInput } from './ui/SmallPasswordInput'

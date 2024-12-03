@@ -1,5 +1,6 @@
 .page__main {
     display: grid;
+    padding: var(--responsive-size);
     width: inherit;
     height: 100%;
 }

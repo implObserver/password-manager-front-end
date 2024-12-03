@@ -5,7 +5,10 @@ export {
     selectCurrentPage,
     selectItemsPerPage,
     selectPaginatedPairs,
-    selectPairs
+    selectPairs,
+    editPair,
+    deletePair,
+    addPair,
 } from './model'
 export {
     PairContext,
