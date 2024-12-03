@@ -9,9 +9,9 @@ export const GeneratePassword = () => {
     const clickHandler = async (e: React.MouseEvent<HTMLDivElement>) => {
         e.preventDefault();
         const password = generatePassword(settings.getState());
-        console.log(password)
+        const service = pair.getState().service;
         pair.setState({
-            service: '',
+            service,
             password,
         })
     }

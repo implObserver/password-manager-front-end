@@ -1,0 +1,5 @@
+.page_service {
+    display: grid;
+    width: inherit;
+    height: 100%;
+}

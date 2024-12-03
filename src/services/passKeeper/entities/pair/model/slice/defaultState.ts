@@ -1,5 +1,5 @@
 export const initialState: PaginationPairs = {
     pairs: [],
     currentPage: 1,
-    itemsPerPage: 10,
+    itemsPerPage: 15,
 };

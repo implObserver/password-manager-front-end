@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { initialState } from "./defaultState";
+import { addPair } from "@/services/passKeeper/entities/pair/model";
 
 const statusesSlice = createSlice({
     name: 'errors',
@@ -23,7 +24,9 @@ const statusesSlice = createSlice({
     },
     extraReducers: (builder) => {
         const setLoadingComplete = (state: Statuses, action: any) => {
-            if (!action.payload.error) {
+            console.log('yes')
+            console.log(action.payload)
+            if (!action.payload.isError) {
                 deleteErrorsDuplicate(state, action);
                 deleteAccessesDuplicate(state, action);
                 const access: Access = {
@@ -33,9 +36,14 @@ const statusesSlice = createSlice({
                 }
                 state.accesses.push(access);
             } else {
+                const error: ErrorType = {
+                    id: action.payload.id,
+                    message: action.payload.data.message,
+                    status: action.payload.data.status,
+                }
                 deleteErrorsDuplicate(state, action);
                 deleteAccessesDuplicate(state, action);
-                state.errors.push(action.payload.data);
+                state.errors.push(error);
             }
         };
 
@@ -52,6 +60,8 @@ const statusesSlice = createSlice({
         }
 
         const setErrorState = (state: Statuses, action: any) => {
+            console.log('no')
+            console.log(action.payload)
             if (action.payload.error) {
                 deleteErrorsDuplicate(state, action);
                 state.errors.push(action.payload.data);
@@ -59,7 +69,7 @@ const statusesSlice = createSlice({
         };
 
         const asyncActions = [
-            
+            { action: addPair },
         ];
 
         asyncActions.forEach(({ action }) => {

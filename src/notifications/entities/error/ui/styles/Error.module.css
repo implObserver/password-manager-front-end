@@ -1,7 +1,8 @@
 .error {
-    width: 30vw;
-    padding: 6px;
-    border-radius: 5px;
-    margin-top: 10px;
+    position: absolute;
+    padding: var(--responsive-size);
+    margin: var(--responsive-size);
+    width: min-content;
+    border-radius: var(--responsive-size);
     background-color: rgba(255, 0, 0, 0.5);
 }

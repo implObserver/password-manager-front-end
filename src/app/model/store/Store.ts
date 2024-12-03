@@ -1,4 +1,5 @@
 
+import { statusesReducer } from '@/notifications/features/notificationDistributor';
 import { pairsReducer } from '@/services/passKeeper/entities/pair';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import {
@@ -15,6 +16,7 @@ import storage from 'redux-persist/lib/storage';
 
 const rootReducer = combineReducers({
   pairs: pairsReducer,
+  statuses: statusesReducer,
 })
 
 const persistConfig = {

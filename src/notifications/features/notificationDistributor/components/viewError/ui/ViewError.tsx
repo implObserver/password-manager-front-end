@@ -16,6 +16,9 @@ export const ViewError = ({ error }) => {
             dispatch(statusesActions.removeError(error));
         };
         window.addEventListener('beforeunload', handleUnload);
+        setTimeout(() => {
+            dispatch(statusesActions.removeError(error));
+        }, 5000);
         return () => {
             window.removeEventListener('beforeunload', handleUnload);
         };

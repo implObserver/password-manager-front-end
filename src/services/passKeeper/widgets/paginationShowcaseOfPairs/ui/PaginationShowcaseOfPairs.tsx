@@ -10,7 +10,6 @@ import {
     selectPairs
 } from "@/services/passKeeper/entities/pair";
 import { useAppDispatch } from "@/common/shared/lib";
-import { AddPassword } from "@/services/passKeeper/features/addPassword";
 
 export const PaginationShowcaseOfPairs = () => {
     const dispatch = useAppDispatch();

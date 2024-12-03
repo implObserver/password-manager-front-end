@@ -3,6 +3,7 @@ import { useCustomState } from "@/common/shared/lib";
 import { Dropdown, DropdownContext } from "@/common/shared/ui/dropdownElement"
 import { GeneratorForm, GeneratorFormContext } from "@/services/passKeeper/entities/generatorForm";
 import { GeneratePassword } from "@/services/passKeeper/features/generatePassword";
+import styles from './styles/Generator.module.css'
 
 export const Generator = () => {
     const focus = useCustomState(false);
@@ -33,7 +34,7 @@ export const Generator = () => {
         <div onClick={clickHandler}>
             <ExternalResetContext.Provider value={externalResetContext}>
                 <ExternalReset>
-                    <span>Сгенерировать пароль</span>
+                    <span className={styles.generate}>Сгенерировать пароль</span>
                     <DropdownContext.Provider value={dropdownContext}>
                         <Dropdown>
                             <GeneratorFormContext.Provider value={settings}>

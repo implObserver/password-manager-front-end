@@ -41,8 +41,7 @@ export const GeneratorForm = () => {
                 max={20}
                 value={data.length}
                 placeholder="длина пароля"
-                disabled={isCustomCharsFilled}
-                required>
+                disabled={isCustomCharsFilled}>
             </input>
 
             <label htmlFor="useUppercase">Use Uppercase:</label>
@@ -53,8 +52,7 @@ export const GeneratorForm = () => {
                 name="useUppercase"
                 type="checkbox"
                 defaultChecked={data.useUppercase}
-                disabled={isCustomCharsFilled}
-                required>
+                disabled={isCustomCharsFilled}>
             </input>
 
             <label htmlFor="useLowerCase">Use Lowercase:</label>
@@ -65,8 +63,7 @@ export const GeneratorForm = () => {
                 name="useLowerCase"
                 type="checkbox"
                 defaultChecked={data.useLowerCase}
-                disabled={isCustomCharsFilled}
-                required>
+                disabled={isCustomCharsFilled}>
             </input>
 
             <label htmlFor="useNumbers">Use Numbers:</label>
@@ -77,8 +74,7 @@ export const GeneratorForm = () => {
                 name="useNumbers"
                 type="checkbox"
                 defaultChecked={data.useNumbers}
-                disabled={isCustomCharsFilled}
-                required>
+                disabled={isCustomCharsFilled}>
             </input>
 
             <label htmlFor="useSpecialChars">Use Special Chars:</label>
@@ -89,8 +85,7 @@ export const GeneratorForm = () => {
                 name="useSpecialChars"
                 type="checkbox"
                 defaultChecked={data.useSpecialChars}
-                disabled={isCustomCharsFilled}
-                required>
+                disabled={isCustomCharsFilled}>
             </input>
 
             <label htmlFor="customChars">Custom Chars:</label>
