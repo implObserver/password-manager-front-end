@@ -7,7 +7,7 @@ export const SpinnerLoader = () => {
             <BeatLoader className={styles.pacman}
                 color={'#3ad5b6'}
                 loading={true}
-                size={25}
+                size={'2vw'}
                 aria-label="Loading Spinner"
                 data-testid="loader"
             />

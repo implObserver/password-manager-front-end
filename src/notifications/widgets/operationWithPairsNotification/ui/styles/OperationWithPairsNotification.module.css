@@ -1,6 +1,6 @@
 .container {
     display: flex;
-    position: absolute; /* Оставляем абсолютное позиционирование */
+    position: fixed;
     font-size: calc(var(--responsive-size) * 2);
     right: 0;
     top: 0;
