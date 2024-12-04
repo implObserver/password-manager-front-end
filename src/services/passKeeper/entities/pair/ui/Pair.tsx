@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { usePairContext } from '../lib';
-import styles from './styles/Password.module.css'
+import styles from './styles/Pair.module.css'
 export const Pair = () => {
     const context = usePairContext();
 

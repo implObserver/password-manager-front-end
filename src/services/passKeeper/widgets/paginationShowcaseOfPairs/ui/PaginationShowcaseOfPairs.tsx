@@ -45,7 +45,7 @@ export const PaginationShowcaseOfPairs = () => {
 
     return (
         <div className={styles.container}>
-            <div className={styles.container}>
+            <div className={styles.pairs}>
                 {fill()}
             </div>
             <div className={totalPages === 1

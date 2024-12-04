@@ -1,5 +1,13 @@
+.container {
+    display: flex;
+    justify-self: left;
+    
+}
+
 .counter {
     display: flex;
     padding: calc(var(--responsive-size)*2);
+    padding-left: 0;
     font-size: calc(var(--responsive-size)*3);
+    
 }

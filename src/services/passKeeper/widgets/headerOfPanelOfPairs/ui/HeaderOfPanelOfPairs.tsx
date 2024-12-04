@@ -9,7 +9,7 @@ export const HeaderOfPanelOfPairs = () => {
     const text = useDeclineService(count);
 
     return (
-        <div>
+        <div className={styles.container}>
             <span className={styles.counter}>{text}</span>
         </div>
     )
