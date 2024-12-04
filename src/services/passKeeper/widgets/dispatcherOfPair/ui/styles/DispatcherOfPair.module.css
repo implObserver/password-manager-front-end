@@ -3,6 +3,7 @@
     justify-content: space-between;
     justify-self: center;
     align-items: center;
+    padding: var(--responsive-size);
 }
 
 .form_group {
