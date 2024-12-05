@@ -16,9 +16,11 @@ import { useEffect } from "react";
 export const Card = () => {
     const location = useLocation();
     const context = location.state as Pair;
-    const pairs = useSelector(selectPairs);
+    if(context) {
+        const pairs = useSelector(selectPairs);
     const index = pairs.findIndex(pair => pair.id === context.id);
     const openedPair = pairs[index];
+    
     const pair = useCustomState({
         id: openedPair.id,
         service: openedPair.service,
@@ -83,4 +85,11 @@ export const Card = () => {
             </div>
         </form>
     )
+    } else {
+        return (
+            <div>
+                Не существующий сервис
+            </div>
+        )
+    }
 }
