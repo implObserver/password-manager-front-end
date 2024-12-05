@@ -7,3 +7,9 @@
 .second_word {
     color: #656668;
 }
+
+@media (prefers-color-scheme: dark) {
+    .second_word {
+        color: var(--color__dark-text_color);
+    }
+}

@@ -6,3 +6,10 @@
     row-gap: calc(var(--responsive-size)*2);
     background-color: white;
 }
+
+@media (prefers-color-scheme: dark) {
+    .header {
+        background-color: var(--color__dark-theme);
+        color: var(--color__dark-text_color);
+    }
+}

@@ -19,3 +19,10 @@
     display: flex;
     width: min-content;
 }
+
+@media (prefers-color-scheme: dark) {
+    .modal,
+    .input {
+        background-color: var(--color__dark-theme);
+    }
+}

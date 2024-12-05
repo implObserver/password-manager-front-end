@@ -30,3 +30,21 @@
 .pair:hover {
     background-color: var(--color__grey-theme);
 }
+
+@media (prefers-color-scheme: dark) {
+    .link {
+        color: var(--color__dark-text_color);
+    }
+
+    .pair {
+        border-bottom: 1px var(--color__dark-theme_accent) solid;
+    }
+
+    .arrow {
+        fill: var(--color__dark-text_color);
+    }
+
+    .pair:hover {
+        background-color: var(--color__dark-theme_accent);
+    }
+}

@@ -7,3 +7,10 @@
     width: 65vw;
     justify-self: center;
 }
+
+@media (prefers-color-scheme: dark) {
+    .panel {
+        color: var(--color__dark-text_color);
+        border: 1px var(--color__dark-theme_accent) solid;
+    }
+}

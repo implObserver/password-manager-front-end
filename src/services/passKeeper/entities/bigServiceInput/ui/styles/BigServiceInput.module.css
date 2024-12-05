@@ -5,6 +5,18 @@
     border: 1px var(--color__grey-theme_accent) solid;
     border-radius: var(--responsive-size);
 }
+
 .lock {
     background-color: var(--color__grey-theme);
+}
+
+@media (prefers-color-scheme: dark) {
+    .input {
+        background-color: var(--color__dark-theme_accent);
+        border: 1px var(--color__dark-theme_accent) solid;
+    }
+
+    .lock {
+        background-color: var(--color__dark-theme_);
+    }
 }

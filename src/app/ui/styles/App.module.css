@@ -9,16 +9,25 @@
 }
 
 :root {
-  --color__main-theme: #95d8e0;
-  --color__main-theme_accent: #c9e2eb;
   --color__grey-theme: #f7f8fa;
   --color__grey-theme_accent: #dedfe0;
   --color__grey-theme_accent_2: #b1b1b1;
   --color_black-theme: #292933;
   --font_family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --color__dark-theme: #35393c;
+  --color__dark-theme_accent: #46484b;
+  --color__dark-text_color: #b7b4af;
   font-family: Roboto;
   color-scheme: light dark;
   --responsive-size: 1vw;
+}
+
+@media (prefers-color-scheme: dark) {
+
+  html,
+  .app {
+    background-color: var(--color__dark-theme);
+  }
 }
 
 @media (min-width: 1000px) {

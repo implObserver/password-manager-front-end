@@ -21,3 +21,18 @@
 .container:active {
     background-color: var(--color__grey-theme_accent_2);
 }
+
+@media (prefers-color-scheme: dark) {
+    .svg {
+        fill: var(--color__dark-text_color);
+    }
+
+    .container:hover {
+        background-color: var(--color__dark-theme_accent);
+        border:1px var(--color__dark-theme) solid;
+    }
+    
+    .container:active {
+        background-color: var(--color__dark-theme);
+    }
+}

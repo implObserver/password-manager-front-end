@@ -14,3 +14,9 @@
 .link:hover {
     text-decoration: underline;
 }
+
+@media (prefers-color-scheme: dark) {
+    .container {
+        color: var(--color__dark-text_color);
+    }
+}
