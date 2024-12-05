@@ -6,7 +6,7 @@
 .form_group {
     display: grid;
     gap: var(--responsive-size);
-    
+
 }
 
 .buttons {
@@ -40,7 +40,13 @@
     width: min-content;
     grid-area: only;
     margin-left: auto;
-    align-items: center;
     padding: var(--responsive-size);
-    padding-top: calc(var(--responsive-size)*0.2);
+}
+
+.service_copy {
+    align-items: center;
+}
+
+.password_copy {
+    border: 1px red solid;
 }

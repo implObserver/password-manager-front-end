@@ -1,0 +1,7 @@
+.generate {
+    display: flex;
+    font-size: calc(var(--responsive-size)*1.5);
+    padding: var(--responsive-size);
+    cursor: pointer;
+    color: #007bff
+}

@@ -11,8 +11,10 @@ export const GeneratePassword = () => {
         const password = generatePassword(settings.getState());
         const service = pair.getState().service;
         pair.setState({
+            id: pair.getState().id,
             service,
             password,
+            isLocked: false,
         })
     }
     return (

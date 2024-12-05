@@ -5,3 +5,24 @@
 .span {
     font-size: calc(var(--responsive-size)*2);
 }
+
+.service_section {
+    display: grid;
+    height: min-content;
+    align-items: center;
+    grid-template-areas: 'only';
+}
+
+.service {
+    grid-area: only;
+    height: min-content;
+}
+
+.service_copy {
+    height: min-content;
+    display: grid;
+    width: min-content;
+    grid-area: only;
+    margin-left: auto;
+    padding: var(--responsive-size);
+}

@@ -16,75 +16,80 @@ import { useEffect } from "react";
 export const Card = () => {
     const location = useLocation();
     const context = location.state as Pair;
-    if(context) {
+    if (context) {
         const pairs = useSelector(selectPairs);
-    const index = pairs.findIndex(pair => pair.id === context.id);
-    const openedPair = pairs[index];
-    
-    const pair = useCustomState({
-        id: openedPair.id,
-        service: openedPair.service,
-        password: openedPair.password,
-        isLocked: true,
-    });
+        const index = pairs.findIndex(pair => pair.id === context.id);
+        const openedPair = pairs[index];
 
-    const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-    }
-    const clickHandler = () => {
-        const data = pair.getState();
-        pair.setState({
-            id: data.id,
-            service: data.service,
-            password: data.password,
-            isLocked: false,
-        })
-    }
+        const pair = useCustomState({
+            id: openedPair.id,
+            service: openedPair.service,
+            password: openedPair.password,
+            isLocked: true,
+        });
 
-    return (
-        <form onSubmit={submitHandler} className={styles.card}>
-            <div className={styles.form_group}>
-                <div className={styles.service_section}>
-                    <div className={styles.service_input}>
+        const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
+            e.preventDefault();
+        }
+        const clickHandler = () => {
+            const data = pair.getState();
+            pair.setState({
+                id: data.id,
+                service: data.service,
+                password: data.password,
+                isLocked: false,
+            })
+        }
+
+        const cancel = () => {
+            pair.setState({
+                id: openedPair.id,
+                service: openedPair.service,
+                password: openedPair.password,
+                isLocked: true,
+            })
+        }
+
+        return (
+            <form onSubmit={submitHandler} className={styles.card}>
+                <div className={styles.form_group}>
+                    <div className={styles.service_section}>
                         <ServiceContext.Provider value={pair}>
                             <Service />
                         </ServiceContext.Provider>
                     </div>
-                    <div className={styles.service_copy}>
-                        <CopyText text={pair.getState().service}></CopyText>
-                    </div>
-                </div>
 
-                <div className={styles.password_section}>
-                    <div className={styles.password_input}>
+                    <div className={styles.password_section}>
                         <PasswordContext.Provider value={pair}>
                             <Password />
                         </PasswordContext.Provider>
                     </div>
-                    <div className={styles.password_copy}>
-                        <CopyText text={pair.getState().password}></CopyText>
+
+                    <div className={styles.buttons}>
+                        {pair.getState().isLocked
+                            ?
+                            <div onClick={clickHandler}>
+                                <EditButton name={'Edit'} />
+                            </div>
+                            :
+                            <>
+                                <EditPairContext.Provider value={pair}>
+                                    <EditPair></EditPair>
+                                </EditPairContext.Provider>
+                                <div onClick={cancel}>
+                                    <EditButton name={'Cancel'} />
+                                </div>
+                            </>
+
+                        }
+
+                        <DeletePairContext.Provider value={pair}>
+                            <DeletePair></DeletePair>
+                        </DeletePairContext.Provider>
                     </div>
                 </div>
-
-                <div className={styles.buttons}>
-                    {pair.getState().isLocked
-                        ?
-                        <div onClick={clickHandler}>
-                            <EditButton name={'Edit'} />
-                        </div>
-                        :
-                        <EditPairContext.Provider value={pair}>
-                            <EditPair></EditPair>
-                        </EditPairContext.Provider>
-                    }
-
-                    <DeletePairContext.Provider value={pair}>
-                        <DeletePair></DeletePair>
-                    </DeletePairContext.Provider>
-                </div>
-            </div>
-        </form>
-    )
+            </form>
+        )
     } else {
         return (
             <div>
