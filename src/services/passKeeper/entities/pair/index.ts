@@ -2,6 +2,8 @@ export { Pair } from './ui/Pair'
 export {
     pairsReducer,
     pairsActions,
+    openedPairActions,
+    openedPairReducer,
     selectCurrentPage,
     selectItemsPerPage,
     selectPaginatedPairs,

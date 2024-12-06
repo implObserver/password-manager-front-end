@@ -1,0 +1,1 @@
+export const selectPair = (state: { openedPair: Pair }) => state.openedPair;

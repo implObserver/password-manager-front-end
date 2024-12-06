@@ -1,13 +1,26 @@
 import { Link } from 'react-router-dom';
 import { usePairContext } from '../lib';
 import styles from './styles/Pair.module.css'
+import { asyncTimeout, useAppDispatch } from '@/common/shared/lib';
+import { openedPairActions } from '../model';
 export const Pair = () => {
     const context = usePairContext();
-    console.log(context.id)
+    const dispatch = useAppDispatch();
+
+    const clickHandler = async () => {
+        const currentPair: Pair = {
+            id: context.id,
+            service: context.service,
+            password: context.password,
+            isLocked: true,
+        }
+        dispatch(openedPairActions.openPair(currentPair));
+    }
+
     return (
         <Link
+            onClick={clickHandler}
             className={styles.link}
-            state={context}
             to={`/service/${context.service}`}>
             <div className={styles.pair}>
                 <div className={styles.service}>

@@ -1,21 +1,21 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { DeleteService } from "../../../../api";
+import { PostService } from "../../../../../api";
 
-export const deletePair = createAsyncThunk(
-    'services/delete/pair/',
+export const addPair = createAsyncThunk(
+    'services/add/pair/',
     async (pair: Pair, thunkAPI) => {
         try {
-            const response = await DeleteService.deletePair(pair);
+            const response = await PostService.addPair(pair);
             const result: EmulateResponse = {
-                id: 'deletePair',
-                message: `Сервис ${pair.service} успешно удален`,
+                id: 'addPair',
+                message: `Сервис ${pair.service} успешно добавлен`,
                 isError: false,
                 data: response,
             }
             return result;
         } catch (error) {
             const result: EmulateResponse = {
-                id: 'deletePair',
+                id: 'addPair',
                 message: `Произошла ошибка`,
                 isError: true,
                 data: {

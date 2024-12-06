@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { PutService } from "../../../../api";
+import { PutService } from "../../../../../api";
 
 export const editPair = createAsyncThunk(
     'services/edit/pair/',

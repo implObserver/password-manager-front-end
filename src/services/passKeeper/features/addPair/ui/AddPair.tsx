@@ -1,5 +1,5 @@
 import { useAppDispatch, useCustomState } from "@/common/shared/lib"
-import { addPair } from "@/services/passKeeper/entities/pair/model/slice/thunks/post/addPair";
+import { addPair } from "@/services/passKeeper/entities/pair/model/slice/pair/thunks/post/addPair";
 import { useAddPairContext } from "../lib/context/Context";
 import { SaveButton } from "@/services/passKeeper/entities/saveButton/ui/SaveButton";
 import { SpinnerLoader } from "@/common/shared/ui/spinnerLoader";

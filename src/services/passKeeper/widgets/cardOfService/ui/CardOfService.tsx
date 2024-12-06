@@ -1,24 +1,23 @@
 import { Service } from "../components/service";
 import { Password } from "../components/password";
 import styles from './styles/CardOfServices.module.css'
-import { useCustomState } from "@/common/shared/lib";
+import { useAppDispatch, useCustomState } from "@/common/shared/lib";
 import { useLocation } from "react-router-dom";
 import { ServiceContext } from "../components/service/lib/context/Context";
 import { PasswordContext } from "../components/password/lib/context/Context";
 import { EditPair, EditPairContext } from "@/services/passKeeper/features/editPair";
 import { DeletePair, DeletePairContext } from "@/services/passKeeper/features/deletePair";
 import { EditButton } from "@/services/passKeeper/entities/editButton";
+import { useEffect } from "react";
+import { openedPairActions } from "@/services/passKeeper/entities/pair";
+import { useSelector } from "react-redux";
+import { selectPair } from "@/services/passKeeper/entities/pair/model/slice/openedPair/selectors";
 
 export const Card = () => {
-    const location = useLocation();
-    const context = location.state as Pair;
+    const openedPair = useSelector(selectPair);
+    console.log(openedPair)
 
-    const pair = useCustomState({
-        id: context.id,
-        service: context.service,
-        password: context.password,
-        isLocked: true,
-    });
+    const pair = useCustomState(openedPair);
 
     const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -36,9 +35,9 @@ export const Card = () => {
 
     const cancel = () => {
         pair.setState({
-            id: context.id,
-            service: context.service,
-            password: context.password,
+            id: openedPair.id,
+            service: openedPair.service,
+            password: openedPair.password,
             isLocked: true,
         })
     }

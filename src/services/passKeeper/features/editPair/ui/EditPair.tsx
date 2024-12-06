@@ -2,7 +2,7 @@ import { useAppDispatch, useCustomState } from "@/common/shared/lib"
 import { SpinnerLoader } from "@/common/shared/ui/spinnerLoader";
 import { useEditPairContext } from "../lib/context/Context";
 import { EditButton } from "@/services/passKeeper/entities/editButton";
-import { editPair } from "@/services/passKeeper/entities/pair";
+import { editPair, openedPairActions } from "@/services/passKeeper/entities/pair";
 
 export const EditPair = () => {
     const isLoading = useCustomState(false);
@@ -21,6 +21,7 @@ export const EditPair = () => {
                     isLocked: true,
                 }
                 await dispatch(editPair(newPair));
+                dispatch(openedPairActions.openPair(newPair));
                 pair.setState(newPair);
                 isLoading.setState(false);
             }
