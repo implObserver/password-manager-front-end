@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
 import { usePairContext } from '../lib';
 import styles from './styles/Pair.module.css'
-import { asyncTimeout, useAppDispatch } from '@/common/shared/lib';
+import { useAppDispatch } from '@/common/shared/lib';
 import { openedPairActions } from '../model';
+
 export const Pair = () => {
     const context = usePairContext();
     const dispatch = useAppDispatch();

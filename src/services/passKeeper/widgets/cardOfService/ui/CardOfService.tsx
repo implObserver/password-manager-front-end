@@ -1,21 +1,17 @@
 import { Service } from "../components/service";
 import { Password } from "../components/password";
 import styles from './styles/CardOfServices.module.css'
-import { useAppDispatch, useCustomState } from "@/common/shared/lib";
-import { useLocation } from "react-router-dom";
+import { useCustomState } from "@/common/shared/lib";
 import { ServiceContext } from "../components/service/lib/context/Context";
 import { PasswordContext } from "../components/password/lib/context/Context";
 import { EditPair, EditPairContext } from "@/services/passKeeper/features/editPair";
 import { DeletePair, DeletePairContext } from "@/services/passKeeper/features/deletePair";
 import { EditButton } from "@/services/passKeeper/entities/editButton";
-import { useEffect } from "react";
-import { openedPairActions } from "@/services/passKeeper/entities/pair";
 import { useSelector } from "react-redux";
 import { selectPair } from "@/services/passKeeper/entities/pair/model/slice/openedPair/selectors";
 
 export const Card = () => {
     const openedPair = useSelector(selectPair);
-    console.log(openedPair)
 
     const pair = useCustomState(openedPair);
 
@@ -72,7 +68,6 @@ export const Card = () => {
                                 <EditButton name={'Cancel'} />
                             </div>
                         </>
-
                     }
 
                     <DeletePairContext.Provider value={pair}>
