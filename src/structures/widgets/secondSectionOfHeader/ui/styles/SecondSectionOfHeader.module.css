@@ -1,4 +1,6 @@
 .title {
     display: flex;
     justify-content: center;
+    padding-left: calc(var(--responsive-size)*10);
+    max-width: 1500px;
 }

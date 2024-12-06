@@ -6,8 +6,10 @@ import { Line } from '@/common/shared/ui/line'
 export const Header = () => {
     return (
         <div className={styles.header}>
-            <FirstSectionOfHeader></FirstSectionOfHeader>
-            <SecondSectionOfHeader></SecondSectionOfHeader>
+            <div className={styles.container}>
+                <FirstSectionOfHeader></FirstSectionOfHeader>
+                <SecondSectionOfHeader></SecondSectionOfHeader>
+            </div>
             <Line text={''}></Line>
         </div>
     )

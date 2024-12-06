@@ -21,7 +21,7 @@
     display: flex;
     align-self: center;
     border-top: 1px var(--color__grey-theme_accent) solid;
-    width: 100%;
+    
 }
 
 @media (prefers-color-scheme: dark) {

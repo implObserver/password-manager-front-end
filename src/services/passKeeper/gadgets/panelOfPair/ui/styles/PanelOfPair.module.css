@@ -3,7 +3,7 @@
     border: 1px var(--color__grey-theme_accent) solid;
     border-radius: var(--responsive-size);
     padding: var(--responsive-size);
-    max-width: 65vw;
+    max-width: 1000px;
     width: 65vw;
     justify-self: center;
 }

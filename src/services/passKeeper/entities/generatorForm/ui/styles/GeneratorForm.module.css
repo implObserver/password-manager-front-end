@@ -6,6 +6,10 @@
     padding: var(--responsive-size);
 }
 
+.modal>label {
+    font-size: calc(var(--responsive-size)*2);
+}
+
 .input {
     display: flex;
     width: 80%;
@@ -13,14 +17,16 @@
     outline: none;
     font-size: calc(var(--responsive-size)*1.5);
     margin-left: 0;
+    font-size: calc(var(--responsive-size)*2);
 }
 
 .checkbox {
     display: flex;
-    width: min-content;
+    width: calc(var(--responsive-size)*3);
 }
 
 @media (prefers-color-scheme: dark) {
+
     .modal,
     .input {
         background-color: var(--color__dark-theme);

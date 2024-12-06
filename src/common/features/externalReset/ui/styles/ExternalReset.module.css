@@ -1,7 +1,11 @@
 .light {
+    display: grid;
     position: relative;
     border-radius: inherit;
     transition: box-shadow 100ms ease-in-out;
-    
     z-index: 20;
+}
+
+.container {
+    display: grid;
 }

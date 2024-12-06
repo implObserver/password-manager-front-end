@@ -1,4 +1,4 @@
 .container {
     display: flex;
-    width: 200px;
+    width: calc(var(--responsive-size)*20);
 }

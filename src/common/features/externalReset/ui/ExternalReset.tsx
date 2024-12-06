@@ -33,7 +33,7 @@ export const ExternalReset = ({ children }) => {
     }
 
     return (
-        <div ref={externalElementRef} className={`${context.state.getState() ? `${styles.light} ${context.index}` : ''}`}>
+        <div ref={externalElementRef} className={`${context.state.getState() ? `${styles.light} ${context.index}` : `${styles.container}`}`}>
             <PlugContext.Provider value={plugContext}>
                 {children}
                 <Plug></Plug>
