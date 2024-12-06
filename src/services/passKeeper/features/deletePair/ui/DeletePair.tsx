@@ -16,13 +16,6 @@ export const DeletePair = () => {
 
         await dispatch(deletePair(pair.getState()));
 
-        pair.setState({
-            id: -1,
-            service: '',
-            password: '',
-            isLocked:false,
-        });
-
         isLoading.setState(false);
         navigate('/');
     }

@@ -3,7 +3,7 @@ import { usePairContext } from '../lib';
 import styles from './styles/Pair.module.css'
 export const Pair = () => {
     const context = usePairContext();
-
+    console.log(context.id)
     return (
         <Link
             className={styles.link}
