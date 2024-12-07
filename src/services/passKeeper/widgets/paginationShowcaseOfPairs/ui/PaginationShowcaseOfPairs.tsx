@@ -7,13 +7,14 @@ import {
     selectCurrentPage,
     selectItemsPerPage,
     selectPaginatedPairs,
-    selectPairs
 } from "@/services/passKeeper/entities/pair";
 import { useAppDispatch } from "@/common/shared/lib";
+import { usePairsShowcaseContext } from "../lib/context/Context";
 
 export const PaginationShowcaseOfPairs = () => {
     const dispatch = useAppDispatch();
-    const pairs = useSelector(selectPairs);
+    const context = usePairsShowcaseContext();
+    const pairs = context.getState();
     const paginatedPairs = useSelector(selectPaginatedPairs);
     const currentPage = useSelector(selectCurrentPage);
     const itemsPerPage = useSelector(selectItemsPerPage);
@@ -32,7 +33,7 @@ export const PaginationShowcaseOfPairs = () => {
     };
 
     const fill = () => {
-        return paginatedPairs.map((pair, index) => {
+        return pairs.map((pair, index) => {
             return (
                 <div className={styles.wrapper} key={pair.service}>
                     <PairContext.Provider value={pair}>

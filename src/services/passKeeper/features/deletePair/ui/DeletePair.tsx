@@ -14,10 +14,13 @@ export const DeletePair = () => {
     const submitHandler = async (e: React.MouseEvent<HTMLDivElement>) => {
         isLoading.setState(true);
 
-        await dispatch(deletePair(pair.getState()));
+        const resultAction = await dispatch(deletePair(pair.getState()));
 
         isLoading.setState(false);
-        navigate('/');
+        const response: EmulateResponse = resultAction.payload as EmulateResponse;
+        if (!response.isError) {
+            navigate('/');
+        }
     }
 
     return (
