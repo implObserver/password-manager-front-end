@@ -1,3 +1,4 @@
 export const pairsFilter = (pairs: Pair[], key: string) => {
-    return pairs.filter(pair => pair.service.includes(key));
+    const lowerCaseKey = key.toLowerCase();
+    return pairs.filter(pair => pair.service.toLowerCase().includes(lowerCaseKey));
 }
