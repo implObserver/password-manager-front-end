@@ -6,7 +6,6 @@ export {
     openedPairReducer,
     selectCurrentPage,
     selectItemsPerPage,
-    selectPaginatedPairs,
     selectPairs,
     editPair,
     deletePair,

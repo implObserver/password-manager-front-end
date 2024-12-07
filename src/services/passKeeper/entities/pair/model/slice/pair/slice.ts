@@ -35,6 +35,9 @@ const pairsSlice = createSlice({
         },
         goToPreviousPage: (state: PaginationPairs) => {
             state.currentPage -= 1;
+        },
+        goToPage: (state: PaginationPairs, action: PayloadAction<number>) => {
+            state.currentPage = action.payload;
         }
     },
     extraReducers: (builder) => {

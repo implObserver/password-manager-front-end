@@ -1,3 +1,9 @@
 .input {
     border-bottom: 1px var(--color__grey-theme_accent) solid;
 }
+
+@media (prefers-color-scheme: dark) {
+    .input {
+        border-bottom: 1px var(--color__dark-theme_accent) solid;
+    }
+}

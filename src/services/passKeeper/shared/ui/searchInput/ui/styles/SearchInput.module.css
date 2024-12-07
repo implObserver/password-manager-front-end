@@ -4,3 +4,9 @@
     font-size: calc(var(--responsive-size)*2);
     outline: none;
 }
+
+@media (prefers-color-scheme: dark) {
+    .input>input {
+        background-color: var(--color__dark-theme);
+    }
+}

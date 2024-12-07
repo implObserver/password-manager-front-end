@@ -3,7 +3,7 @@ import { asyncTimeout } from "@/common/shared/lib"
 export const PostService = {
     async addPair(pair: Pair): Promise<ResponseData> {
         await asyncTimeout(1000);
-        const isError = Math.random() <= 0.5;
+        const isError = Math.random() > 2;
         if (isError) {
             throw {
                 status: 403,
